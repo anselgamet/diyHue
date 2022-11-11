@@ -369,7 +369,7 @@ class Light():
         result["state"]["alert"] = self.state["alert"]
         if "mode" in self.state:
             result["state"]["mode"] = self.state["mode"]
-        result["state"]["reachable"] = self.state["reachable"]
+        result["state"]["reachable"] = True
         result["modelid"] = self.modelid
         result["name"] = self.name
         result["uniqueid"] = self.uniqueid
@@ -403,7 +403,7 @@ class Light():
                     protocol.set_light(self, state)
                     self.state["reachable"] = True
                 except Exception as e:
-                    self.state["reachable"] = False
+                    self.state["reachable"] = True
                     logging.warning(self.name + " light error, details: %s", e)
                 return
         if advertise:

@@ -267,7 +267,7 @@ def on_message(client, userdata, msg):
                         client.publish(light.protocol_cfg['command_topic'], json.dumps(payload))
                 elif data["type"] == "zigbee_publish_error":
                     logging.info(light.name + " is unreachable")
-                    light.state["reachable"] = False
+                    light.state["reachable"] = True
             else:
                 device_friendlyname = msg.topic.split("/")[1]
                 device = getObject(device_friendlyname)

@@ -21,7 +21,7 @@ def syncWithLights(off_if_unreachable): #update Hue Bridge lights states
                         light.state.update(newState)
                         light.state["reachable"] = True
                     except Exception as e:
-                        light.state["reachable"] = False
+                        light.state["reachable"] = True
                         if off_if_unreachable:
                             light.state["on"] = False
                         logging.warning(light.name + " is unreachable: %s", e)

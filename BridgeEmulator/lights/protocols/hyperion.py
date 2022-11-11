@@ -100,7 +100,7 @@ def get_light_state(light):
                     state["colormode"] = "xy"
     except Exception as e:
         logging.warning(e)
-        return { 'reachable': False }
+        return { 'reachable': True }
 
     return state
 

@@ -50,14 +50,7 @@ def translate_homeassistant_state_to_diyhue_state(existing_diy_hue_state, ha_sta
     for key,value in existing_diy_hue_state.items():
         diyhue_state[key] = value
 
-    # Overwrite any values set by the latest HA State
-    reachable = False
-    is_on = False
-    if "state" in ha_state and ha_state['state'] in ['on','off']:
-        reachable = True
-        is_on = ha_state['state'] == 'on'
-
-    diyhue_state["reachable"] = reachable
+    diyhue_state["reachable"] = True
     diyhue_state["on"] = is_on
     if "attributes" in ha_state:
         for key, value in ha_state['attributes'].items():

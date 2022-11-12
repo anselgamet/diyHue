@@ -99,7 +99,7 @@ def runHttps(BIND_IP, HOST_HTTPS_PORT, CONFIG_PATH):
     app.run(host=BIND_IP, port=HOST_HTTPS_PORT, ssl_context=ctx)
 
 def runHttp(BIND_IP, HOST_HTTP_PORT):
-    app.run(host=BIND_IP, port=HOST_HTTP_PORT)
+    app.run(host=BIND_IP, port=HOST_HTTP_PORT, debug=True)
 
 if __name__ == '__main__':
     from services import mqtt, deconz, ssdp, mdns, scheduler, remoteApi, remoteDiscover, entertainment, stateFetch, eventStreamer, homeAssistantWS

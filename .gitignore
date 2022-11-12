@@ -20,3 +20,4 @@ BridgeEmulator/export/
 BridgeEmulator/cert.pem
 
 /certs/
+.vscode/

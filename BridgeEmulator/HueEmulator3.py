@@ -3,6 +3,7 @@ from flask import Flask
 from flask.json import jsonify
 from flask_cors import CORS
 from flask_restful import Api
+from flask_debugtoolbar import DebugToolbarExtension
 from threading import Thread
 import ssl
 import configManager
@@ -99,6 +100,7 @@ def runHttps(BIND_IP, HOST_HTTPS_PORT, CONFIG_PATH):
     app.run(host=BIND_IP, port=HOST_HTTPS_PORT, ssl_context=ctx)
 
 def runHttp(BIND_IP, HOST_HTTP_PORT):
+    toolbar = DebugToolbarExtension(app)
     app.run(host=BIND_IP, port=HOST_HTTP_PORT, debug=True)
 
 if __name__ == '__main__':
